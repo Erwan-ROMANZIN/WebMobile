@@ -1,0 +1,7 @@
+offre_list:
+    path: offre/all
+    controller: App\Controller\OffreController::allOffres
+
+candidature_list:
+    path: candidature/all
+    controller: App\Controller\CandidatureController::allCandidatures
