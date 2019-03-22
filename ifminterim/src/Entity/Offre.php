@@ -62,17 +62,22 @@ class Offre
         return $this->id;
     }
 
-    public function getNomEnt(): ?string
+    /**
+     * @return mixed
+     */
+    public function getNomEnt()
     {
         return $this->nom_ent;
     }
 
-    public function setNomEnt(string $nom_ent): self
+    /**
+     * @param mixed $nom_ent
+     */
+    public function setNomEnt($nom_ent): void
     {
         $this->nom_ent = $nom_ent;
-
-        return $this;
     }
+
 
     public function getPoste(): ?string
     {

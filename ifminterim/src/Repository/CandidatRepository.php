@@ -47,21 +47,14 @@ class CandidatRepository extends ServiceEntityRepository
         ;
     }
     */
-    public function doRequete($sql){
-
-        $entityManager=$this->getEntityManager();
-
-        $query=$entityManager->createQuery($sql);
-
-        $result=$query->execute();
-
-        return $query;
+    public function findOneBySomeField($value): ?Candidat
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
     }
 
-    public function addCandidat(){
-       $sql= "INSERT INTO candidat (nom, prenom, ville, email, telephone, type_de_contrat, emploi_recherche, localisation, rayon, disponibilite, cv, photo)
-        VALUES ('" . $nom . "', '" . $prenom . "', '" . $ville . "', '" . $email . "', '" . $telephone . "', '" . $type_de_contrat . "', '" . $emploi_recherche . "', '" . $localisation . "', '" . $rayon . "' , '" . $disponibilite . "', '" . $cv . "' , '" . $photo . "' )";
-       $query = $this->doRequete($sql);
-
-    }
 }
