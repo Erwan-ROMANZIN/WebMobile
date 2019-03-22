@@ -28,6 +28,8 @@ class CandidaturesManager
         return $this->getGateway()->findOneById($id);
     }
 
+
+
     public function persist(Candidatures $card): Candidatures
     {
         return $this->getGateway()->persist($card);
